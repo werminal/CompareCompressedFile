@@ -35,6 +35,9 @@ Console.WriteLine(compareOriginalWithOutput);
 var compressionRatio = 100 * (1 - (double)compressedSize / originalSize);
 Console.WriteLine($"Compression Ratio: {compressionRatio:F2}%");
 
+Directory.Delete(initialStagingFolder, true);
+File.Delete(initialCompressedFullFileName);
+
 return;
 
 static void InitialSetup(string folder)
